@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "BiliAnalysis",
+  "version": "0.0.1",
+  "description": "为 BiliBili 提供云端解析功能，解析结果自动复制到剪贴板。",
+  "permissions": [
+    "clipboardWrite",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.bilibili.com/*",
+    "https://live.bilibili.com/*",
+    "https://music.163.com/song?id=*"
+  ],
+  "action": {
+    "default_popup": "",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.bilibili.com/*",
+        "https://live.bilibili.com/*",
+        "https://music.163.com/song?id=*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
